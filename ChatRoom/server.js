@@ -22,7 +22,7 @@ const botName = "ChatCord ";
 
 // Run when client connects
 io.on("connection", (socket) => {
-    console.log(io.of("/").adapter);
+    // console.log(io.of("/").adapter);
     socket.on("joinRoom", ({ username, room }) => {
         const user = userJoin(socket.id, username, room);
 
@@ -72,6 +72,6 @@ io.on("connection", (socket) => {
     });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000 || process.env.PORT;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
